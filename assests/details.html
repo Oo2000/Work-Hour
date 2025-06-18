@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>詳細編集</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1 id="detailDate"></h1>
+        <div class="form-group">
+            <label for="checkIn">出勤時間:</label>
+            <input type="time" id="checkIn">
+        </div>
+        <div class="form-group">
+            <label for="checkOut">退勤時間:</label>
+            <input type="time" id="checkOut">
+        </div>
+        <div class="form-group">
+            <label for="restHours">休憩時間 (時間):</label>
+            <input type="number" id="restHours" step="0.1" min="0">
+        </div>
+        <div class="button-group">
+            <button id="save">保存</button>
+            <button id="back">カレンダーに戻る</button>
+        </div>
+    </div>
+
+    <script src="./js/detail.js"></script>
+</body>
+</html>

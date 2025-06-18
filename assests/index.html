@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>勤務時間管理</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+            <button id="prevMonth">&lt;</button>
+            <h1 id="monthYear"></h1>
+            <button id="nextMonth">&gt;</button>
+        </div>
+        <div class="summary">
+            <p>月間総労働時間: <span id="totalMonthlyHours">0</span> 時間</p>
+        </div>
+        <table id="calendar">
+            <thead>
+                <tr>
+                    <th>日</th>
+                    <th>月</th>
+                    <th>火</th>
+                    <th>水</th>
+                    <th>木</th>
+                    <th>金</th>
+                    <th>土</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+
+    <script src="./js/main.js"></script>
+</body>
+</html>

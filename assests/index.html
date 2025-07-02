@@ -7,16 +7,26 @@
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-
+    <h1>Working Hour Tracker</h1>
     <div class="container">
+        <!-- これはヘッダーです。 -->
         <div class="header">
             <button id="prevMonth">&lt;</button>
             <h1 id="monthYear"></h1>
             <button id="nextMonth">&gt;</button>
         </div>
+
+        <div class="date-jump" style="display: flex; gap: 10px; justify-content: center; margin-bottom: 20px;">
+            <input type="date" id="dateInput" style="padding: 5px;">
+            <button id="goToDateButton" style="padding: 5px 15px; background: #28a745; color: white; border: none; border-radius: 5px; cursor: pointer;">Go</button>
+        </div>
+
+        <!-- サマリー -->
         <div class="summary">
             <p>月間総労働時間: <span id="totalMonthlyHours">0</span> 時間</p>
         </div>
+
+        <!-- カレンダー -->
         <table id="calendar">
             <thead>
                 <tr>

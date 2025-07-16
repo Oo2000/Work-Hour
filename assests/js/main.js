@@ -66,25 +66,19 @@ document.addEventListener('DOMContentLoaded', function() {
                     hoursInfoDiv.className = 'hours-info';
                     
                     const dailyHoursSpan = document.createElement('span');
-                    // dailyHoursSpan.textContent = `日計: ${dailyHours.toFixed(2)}h`;
-                    // dailyHoursSpan.className = dailyHours > 6 ? 'red-text' : 'blue-text';
+                    dailyHoursSpan.textContent = `日計: ${dailyHours.toFixed(2)}h`;
 
-                    // const dailyHoursSpan = document.createElement('span');
-                    const dailyHoursSpan = document.createElement('span');
-dailyHoursSpan.textContent = `日計: ${dailyHours.toFixed(2)}h`;
-                                
-// This block checks for all three conditions
-if (dailyHours > 6) {
-    dailyHoursSpan.className = 'red-text';    // More than 6 hours
-} else if (dailyHours === 0) {
-    dailyHoursSpan.className = 'green-text';  // Exactly 0 hours
-} else {
-    dailyHoursSpan.className = 'blue-text';   // Less than 6 hours (but more than 0)
-}
+                    /* --- MODIFIED SECTION --- */
+                    // This block applies color based on the working hours.
+                    if (dailyHours > 5) {
+                        dailyHoursSpan.className = 'red-text';    // Greater than 5 hours
+                    } else if (dailyHours > 0) {
+                        dailyHoursSpan.className = 'blue-text';   // Less than 5 hours (but more than 0)
+                    } else {
+                        dailyHoursSpan.className = 'green-text';  // Exactly 0 hours
+                    }
+                    /* --- END MODIFIED SECTION --- */
 
-const weeklyHoursSpan = document.createElement('span');
-
-                    
                     const weeklyHoursSpan = document.createElement('span');
                     const currentWeekHours = weeklyHoursArray[i];
                     weeklyHoursSpan.textContent = `週計: ${currentWeekHours.toFixed(2)}h`;
@@ -119,7 +113,6 @@ const weeklyHoursSpan = document.createElement('span');
         renderCalendar();
     });
 
-
     goToDateButton.addEventListener('click', () => {
         const selectedDateStr = dateInput.value;
         if (!selectedDateStr) {
@@ -127,11 +120,8 @@ const weeklyHoursSpan = document.createElement('span');
             return;
         }
 
-        // The date from the input is "YYYY-MM-DD". The 'T00:00:00' prevents timezone issues.
         currentDate = new Date(selectedDateStr + 'T00:00:00');
         
-        // Now, call renderCalendar. It will use the newly set `currentDate`
-        // to build the correct month and will highlight the specific day.
         renderCalendar(selectedDateStr);
     });
 

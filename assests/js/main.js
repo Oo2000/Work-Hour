@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     dateDiv.textContent = date;
                     cell.appendChild(dateDiv);
 
-                    // --- Your existing logic for calculating and displaying hours ---
+                    // --- calculating and displaying hours ---
                     const dayData = workData[fullDate];
                     let dailyHours = 0;
                     if (dayData && dayData.checkIn && dayData.checkOut) {
@@ -68,16 +68,13 @@ document.addEventListener('DOMContentLoaded', function() {
                     const dailyHoursSpan = document.createElement('span');
                     dailyHoursSpan.textContent = `日計: ${dailyHours.toFixed(2)}h`;
 
-                    /* --- MODIFIED SECTION --- */
-                    // This block applies color based on the working hours.
                     if (dailyHours > 5) {
-                        dailyHoursSpan.className = 'red-text';    // Greater than 5 hours
+                        dailyHoursSpan.className = 'red-text';    
                     } else if (dailyHours > 0) {
-                        dailyHoursSpan.className = 'blue-text';   // Less than 5 hours (but more than 0)
+                        dailyHoursSpan.className = 'blue-text';   
                     } else {
-                        dailyHoursSpan.className = 'green-text';  // Exactly 0 hours
+                        dailyHoursSpan.className = 'green-text'; 
                     }
-                    /* --- END MODIFIED SECTION --- */
 
                     const weeklyHoursSpan = document.createElement('span');
                     const currentWeekHours = weeklyHoursArray[i];

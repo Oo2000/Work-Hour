@@ -2,7 +2,7 @@ body {
     font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
     
     /* --- MODIFIED SECTION --- */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('C:\Users\USER\Desktop\Work Hours\assests\img\3081.JPG');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/3081.JPG);
     background-size: cover; /* Ensures the image covers the whole screen */
     background-position: center; /* Centers the image */
     background-repeat: no-repeat; /* Prevents the image from repeating */
@@ -19,6 +19,7 @@ body {
 
 .container {
     background-color: white;
+    opacity: 0.9;
     padding: 20px 40px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
@@ -35,7 +36,8 @@ body {
 
 .header button {
     background: #007bff;
-    color: white;
+    /* color: white; */
+    opacity: 0.5;
     border: none;
     padding: 10px 15px;
     border-radius: 5px;
@@ -74,6 +76,7 @@ body {
 
 #calendar th {
     background-color: #f8f9fa;
+    /* opacity: 0.5; */
     font-weight: bold;
     align-content: center;
     text-align: center;

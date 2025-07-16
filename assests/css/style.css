@@ -1,12 +1,21 @@
 body {
     font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
-    background-color: #f4f4f4;
+    
+    /* --- MODIFIED SECTION --- */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('C:\Users\USER\Desktop\Work Hours\assests\img\3081.jpeg');
+    background-size: cover; /* Ensures the image covers the whole screen */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-attachment: fixed; /* Keeps the background fixed during scroll */
+    /* --- END MODIFIED SECTION --- */
+
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
 }
+/* /////// */
 
 .container {
     background-color: white;
@@ -189,3 +198,4 @@ body {
 .button-enter:hover {
     background: #218838;
 }
+

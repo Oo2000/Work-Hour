@@ -66,8 +66,24 @@ document.addEventListener('DOMContentLoaded', function() {
                     hoursInfoDiv.className = 'hours-info';
                     
                     const dailyHoursSpan = document.createElement('span');
-                    dailyHoursSpan.textContent = `日計: ${dailyHours.toFixed(2)}h`;
-                    dailyHoursSpan.className = dailyHours > 6 ? 'red-text' : 'blue-text';
+                    // dailyHoursSpan.textContent = `日計: ${dailyHours.toFixed(2)}h`;
+                    // dailyHoursSpan.className = dailyHours > 6 ? 'red-text' : 'blue-text';
+
+                    // const dailyHoursSpan = document.createElement('span');
+                    const dailyHoursSpan = document.createElement('span');
+dailyHoursSpan.textContent = `日計: ${dailyHours.toFixed(2)}h`;
+                                
+// This block checks for all three conditions
+if (dailyHours > 6) {
+    dailyHoursSpan.className = 'red-text';    // More than 6 hours
+} else if (dailyHours === 0) {
+    dailyHoursSpan.className = 'green-text';  // Exactly 0 hours
+} else {
+    dailyHoursSpan.className = 'blue-text';   // Less than 6 hours (but more than 0)
+}
+
+const weeklyHoursSpan = document.createElement('span');
+
                     
                     const weeklyHoursSpan = document.createElement('span');
                     const currentWeekHours = weeklyHoursArray[i];
@@ -103,7 +119,7 @@ document.addEventListener('DOMContentLoaded', function() {
         renderCalendar();
     });
 
-    // ✅ THIS IS THE CORRECTED LOGIC
+
     goToDateButton.addEventListener('click', () => {
         const selectedDateStr = dateInput.value;
         if (!selectedDateStr) {
